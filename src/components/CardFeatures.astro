@@ -1,0 +1,62 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+const { features } = Astro.props;
+const { title, description, feature_list } = features;
+import { Card } from 'accessible-astro-components';
+import { markdownify } from "@/lib/utils/textConverter";
+---
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem
+  }
+  @media (min-width: 550px) {
+    ul {
+      grid-template-columns:repeat(2,1fr);
+      grid-gap: 2rem
+    }
+  }
+  @media (min-width: 950px) {
+    ul {
+      grid-template-columns:repeat(3,1fr)
+    }
+  }
+  .card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: light-dark(hsl(204 20% 94%), hsl(215 25% 15%));
+    color: light-dark(hsl(215 25% 27%), hsl(215 25% 89%));
+  }
+
+</style>
+<section class="lg:mb-10" style="margin: 0; padding: 2.4em;">
+  <div class="container">
+    <div class="row justify-center text-center">
+      <div class="text-center">
+        <h1 set:html={markdownify(title)} />
+        <br/><br/>
+      </div>
+      <div class="bg-surface shadow row justify-center rounded-2xl px-[30px] pb-[75px] pt-16" style="background-color: rgba(255,255,255,0.6);">
+        <div class="lg:col-11">
+          <div class="row text-center">
+            <strong>
+              Fully insured and NCCA trained professionals in carpet & upholstery cleaning, we offer a range of services at competitive prices. Our team is dedicated to providing the best possible service, ensuring your carpets and upholstery are left looking and feeling like new. We use only the highest quality products and equipment, and our friendly staff are always on hand to answer any questions you may have. Whether you need a one-off clean or regular maintenance, we’re here to help.
+            </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="my-2">
+      {feature_list.map((item, i) => (
+        <li key={i} style="padding: 1.2em;">
+          <Card
+            img={item.image}
+            url={item.url}
+            title={item.title}>
+            <p set:html={markdownify(item.content)} />
+          </Card>
+        </li>
+      ))}
+  </div>
+</section>

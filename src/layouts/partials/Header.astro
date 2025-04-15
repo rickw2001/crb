@@ -23,7 +23,11 @@ const { pathname } = Astro.url;
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
-      <Logo />
+      <Logo
+        url="/images/logo-sml.jpg"
+        class="h-8 w-auto lg:h-10"
+        alt="Carpet Refresh Borders"
+      />
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
@@ -112,9 +116,6 @@ const { pathname } = Astro.url;
         ))
       }
     </ul>
-    <div class="order-1 ml-auto absolute right-3 top-3 items-center md:order-2 md:ml-0 lg:relative lg:right-0 lg:flex lg:top-0">
-      <ThemeToggle />
-    </div>
   </header>
 </nav>
 

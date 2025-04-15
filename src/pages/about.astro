@@ -1,6 +1,7 @@
 ---
 import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
+import { Card } from 'accessible-astro-components';
 import { getEntry } from "astro:content";
 
 const about = await getEntry("about", "index");
@@ -14,12 +15,31 @@ const { Content } = await about.render();
 <Base
   entry_keys={["about", "index"]}
 >
-  <section class="py-16">
+  <style>
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 4rem
+    }
+
+    @media (min-width: 550px) {
+      ul {
+        grid-template-columns:repeat(2,1fr);
+        grid-gap: 2rem
+      }
+    }
+
+    @media (min-width: 950px) {
+      ul {
+        grid-template-columns:repeat(3,1fr)
+      }
+    }
+  </style>
+  <section class="my-12">
     <div class="container">
       <div class="mx-auto max-w-[768px] text-center">
         <PageHeader page_data={page_data} />
       </div>
-      <Content />
     </div>
   </section>
 </Base>

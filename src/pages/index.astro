@@ -1,6 +1,6 @@
 ---
 import Section from "@/components/core/Section.astro";
-import Features from "@/components/Features.astro";
+import CardFeatures from "@/components/CardFeatures.astro";
 import Testimonial from "@/components/Testimonial.astro";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
@@ -10,11 +10,20 @@ const homepage = await getEntry("homepage", "index");
 // console.log(homepage);
 const { banner, sections, features, testimonial } = homepage.data;
 const call_to_action = homepage.data.call_to_action;
+let backgroundUrl = 'url(/images/home-banner.jpg)'
 ---
-
+<style define:vars={{ backgroundUrl }}>
+  section.animate-fade-in {
+    background-image: var(--backgroundUrl);
+    background-size: cover;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+    background-position: 50% 50%;
+  }
+</style>
 <Base>
   <!-- banner -->
-  <section class="lg:mb-10 animate-fade-in">
+  <section class="lg:mb-10 animate-fade-in" style="margin-bottom: 0;">
     <Section section={banner} />
   </section>
   <!-- multi section -->
@@ -27,11 +36,17 @@ const call_to_action = homepage.data.call_to_action;
       </section>
     )
   }
+  <section class="lg:mb-10" style="margin: 0; padding: 1.4em; background-color: darkseagreen;">
+    <div class="container">
+      <div class="row text-center">
+        <h3>Contact us today for a free quote on <a href="tel:07934 479278">07934 479278</a></h3>
+      </div>
+    </div>
+  </section>
+  <Cta {...call_to_action} />
   <!-- key features -->
-  <Features features={features} />
+  <CardFeatures features={features} />
   <!-- testimonial -->
   <Testimonial testimonial={testimonial} />
   <!-- call to action -->
-  <Cta {...call_to_action} />
-  <!-- <Content /> -->
 </Base>

@@ -1,30 +1,38 @@
 {
   "site": {
-    "title": "alfadev-astro-starter",
-    "base_url": "https://astro-starter.alfadev.io",
+    "title": "Carpet Refresh Borders",
+    "base_url": "https://carpetrefreshborders.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.ico",
-    "logo": "/images/logo.png",
-    "logo_width": "47",
-    "logo_height": "47",
-    "logo_text": "alfadev-astro-starter"
+    "logo": "/images/logo-sml.jpg",
+    "logo_width": "280",
+    "logo_height": "114",
+    "logo_text": "carpet refresh borders"
   },
 
   "params": {
-    "footer_description": "Building cool things, one line of code (and a lot of coffee) at a time. Got questions? Or just bored? Reach out!",
-    "email": "diego.alfadev@gmail.com",
-    "location": "Somewhere on Earth, where the Wi-Fi is decent and the coffee is strong.",
-    "phone": "+704-555-0127 (but let's be honest, email is faster)",
+    "footer_description": "",
+    "email": "carpetrefreshborders@gmail.com",
+    "location": "Scottish Borders, Edinburgh, Newcastle, Carlisle, Glasgow",
+    "phone": "07934 479278",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2023 proudly crafted by [AlfaDev](https://github.com/diego-alfadev)"
+    "copyright": "Copyright © 2025"
 },
 
   "metadata": {
-    "meta_author": "alfadev",
-    "meta_image": "/images/logo.png",
-    "meta_description": "alfadev-astro-starter is a starter template for Astro, the modern static site generator for the modern web.",
-    "meta_keywords": ["astro", "Astro Starter", "alfadev", "Diego Alfaro Sáez", "static site generator", "modern web", "astro template"],
-    "meta_application_name": "alfadev-astro-starter"
+    "meta_author": "Carpet Refresh Borders",
+    "meta_image": "/images/logo-sml.jpg",
+    "meta_description": "All your carpet cleaning needs in the Scottish Borders, Edinburgh, Newcastle, Carlisle, Glasgow",
+    "meta_keywords": [
+      "carpet cleaning",
+      "carpet refresh",
+      "carpet cleaning scottish borders",
+      "carpet cleaning edinburgh",
+      "carpet cleaning newcastle",
+      "carpet cleaning carlisle",
+      "carpet cleaning glasgow"
+    ],
+    "meta_application_name": "Carpet Refresh Borders"
   }
 }

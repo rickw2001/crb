@@ -19,21 +19,16 @@ export type Testimonial = {
 
 const { testimonial } = Astro.props;
 ---
-
-<section class="reviews">
+<section class="lg:mb-10" style="margin: 0; padding: 3.4em; background-color: #007aff;">
   <div class="container">
-    <div class="row justify-between">
-      <div class="lg:col-6 lg:mb-0 mb-4">
-        <h2 set:html={markdownify(testimonial.title)}/>
-      </div>
-      <div class="lg:col-4">
-        <p set:html={markdownify(testimonial.description)}/>
-      </div>
+    <div class="row text-center">
+      <h1 class="h1 text-text" style="color: white;" >What Our Customers Say</h1>
     </div>
-    <div class="row mt-2 md:mt-10">
-      <div class="col-12">
-        <TestimonialSlider list={testimonial.testimonial_list} client:load />
+    <br/><br/>
+      <div class="row mt-2 md:mt-10">
+        <div class="col-12">
+          <TestimonialSlider list={testimonial.testimonial_list} client:load />
+        </div>
       </div>
-    </div>
   </div>
 </section>

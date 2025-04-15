@@ -9,20 +9,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="px-5 py-20 xl:py-[120px]">
+<section class="lg:mb-10" style="margin: 0; padding: 3.4em; background-color: #16364b;">
   <div class="container">
-    <div
-      class="bg-surface shadow row justify-center rounded-2xl px-[30px] pb-[75px] pt-16"
-    >
+    <div class="row text-center">
+      <h1 class="h1 text-text" style="color: white;" >Welcome to Carpet Refresh Borders</h1>
+    </div>
+    <br/><br/>
+    <div class="bg-surface shadow row justify-center rounded-2xl px-[30px] pb-[75px] pt-16" style="background-color: rgba(255,255,255,0.6);">
       <div class="lg:col-11">
-        <div class="row">
-          <div class="lg:col-7">
-            <h2 class="h1 text-text" set:html={markdownify(title)}/>
-            {button && <LinkButton {...button} addClasses="mt-8" />}
-          </div>
-          <div class="mt-8 lg:col-5 lg:mt-0">
-            <p class="text-text" set:html={markdownify(description)}/>
-          </div>
+        <div class="row text-center">
+          <strong>We specialize in bringing life back to your carpets & upholstery. Whether it’s a one-time deep clean or regular maintenance, our friendly and reliable team is committed to delivering fresh, spotless results every time.</strong>
         </div>
       </div>
     </div>
